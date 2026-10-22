@@ -3,7 +3,10 @@
 A cart-based double inverted pendulum that I designed, machined, wired, and programmed. The cart is driven by a BLDC motor under field-oriented control (FOC), and a 1 kHz full-state-feedback controller on an STM32 keeps both arms balanced upright.
 
 ▶ **[Video: double pendulum balancing](https://www.youtube.com/watch?v=LIbvaRDQooo)**
+
 ▶ **[Video: single pendulum (earlier build)](https://youtu.be/EyMTxQ-Wd4I)**
+
+📷 **[Build album: photos and videos from design through first balance](https://photos.app.goo.gl/dTnpuS19D6qvqufP6)**
 
 ![Double inverted pendulum balancing](media/balancing.jpg)
 
