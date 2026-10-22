@@ -6,6 +6,8 @@ A cart-based double inverted pendulum that I designed, machined, wired, and prog
 
 ▶ **[Video: single pendulum (earlier build)](https://youtu.be/EyMTxQ-Wd4I)**
 
+🙏 **[Video: why I built it (less technical)](https://www.youtube.com/watch?v=KdIJLhe9izU)**
+
 📷 **[Build album: photos and videos from design through first balance](https://photos.app.goo.gl/dTnpuS19D6qvqufP6)**
 
 ![Double inverted pendulum balancing](media/balancing.jpg)
@@ -25,7 +27,12 @@ I built this partly as a challenge to grow as an engineer outside my mechanical 
 | Mechanical | Linear track and belt-driven cart, free-swinging pivots; custom machined aluminum parts |
 | Operator I/O | Two toggle switches (mode select), limit switches at the track ends, red/yellow/green/white status lights |
 
-![Machined parts](media/machined_parts.jpg)
+<p>
+  <img src="media/machined_parts.jpg" alt="Machined aluminum parts" height="320">
+  <img src="media/PXL_20250216_022726548.jpg" alt="Control enclosure wiring" height="320">
+</p>
+
+*Left: machined aluminum cart and pivot parts. Right: control enclosure with the STM32 Nucleo, IHM08M1 motor driver, 48 V supply, and terminal-block wiring.*
 
 ## How it works
 
@@ -52,6 +59,10 @@ cart position *x*, arm angles *θ₁* and *θ₂* (0 = upright), and their veloc
 | Swing-up | Play back the swing-up profile |
 | Balance | Full-state feedback control (only entered when inside the catch window) |
 | Reset / re-zero | Clear fault flags, or re-zero the encoders |
+
+**Motor control.** The cart motor runs in FOC torque mode, configured in ST Motor Control Workbench (20 kHz PWM, 48 V bus, quadrature-encoder speed feedback):
+
+![FOC configuration](media/2025-02-20%2018_22_33-MC%20Workbench%20-%20Praise%20the%20Lord.jpg)
 
 **Safety.** Control drops back to the idle hub state if any of these happen:
 - a track-end limit switch opens
